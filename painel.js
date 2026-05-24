@@ -235,6 +235,75 @@ function renderSitePanel(site) {
   `;
 }
 
+function renderDashboardPanel(site) {
+  setHeader("Site", "Central do seu casamento");
+  const days = daysUntil(site.date);
+  const activePages = (site.pages || []).filter((page) => page.active !== false).length || 5;
+  const galleryCount = (site.gallery || []).filter(Boolean).length;
+  const enabledTools = [site.showGifts !== false, site.showRsvp !== false, Boolean(site.customAddress)].filter(Boolean).length;
+  const statusText = days == null ? "Data em aberto" : `${days} dias para o sim`;
+
+  contentEl.innerHTML = `
+    <section class="panel-hero-card">
+      <div class="panel-hero-copy">
+        <span class="panel-overline">Site publicado</span>
+        <h2>${escapeHtml(site.couple || "Seu casamento")}</h2>
+        <p>${escapeHtml(statusText)} · ${escapeHtml(site.place || "Local a definir")}</p>
+        <div class="panel-hero-actions">
+          <button class="button button-outline" type="button" data-nav="layout">Personalizar layout</button>
+          <a class="button button-primary" href="site.html?site=${encodeURIComponent(site.slug)}">Abrir site</a>
+        </div>
+      </div>
+      <div class="panel-hero-date">
+        <span>${escapeHtml(formatDate(site.date) || "--/--/----")}</span>
+        <strong>${escapeHtml(site.theme || site.style || "forest")}</strong>
+      </div>
+    </section>
+
+    <div class="panel-stat-grid">
+      <article><span>Paginas ativas</span><strong>${activePages}</strong></article>
+      <article><span>Fotos no album</span><strong>${galleryCount}</strong></article>
+      <article><span>Recursos ligados</span><strong>${enabledTools}</strong></article>
+      <article><span>Endereco</span><strong>${escapeHtml(site.slug || "site")}</strong></article>
+    </div>
+
+    <div class="panel-dashboard-grid">
+      <section class="panel-card panel-summary-card">
+        <div class="panel-section-head">
+          <div>
+            <h2>Resumo</h2>
+            <p>Os dados principais que aparecem para os convidados.</p>
+          </div>
+        </div>
+        <div class="panel-kv">
+          <div><span>Casal</span><strong>${escapeHtml(site.couple || "-")}</strong></div>
+          <div><span>Data</span><strong>${escapeHtml(formatDate(site.date) || "-")}</strong></div>
+          <div><span>Local</span><strong>${escapeHtml(site.place || "-")}</strong></div>
+          <div><span>Tema</span><strong>${escapeHtml(site.theme || site.style || "-")}</strong></div>
+        </div>
+        <div class="panel-status-list">
+          <div><span></span><strong>RSVP ${site.showRsvp === false ? "desligado" : "ativo"}</strong></div>
+          <div><span></span><strong>Lista de presentes ${site.showGifts === false ? "oculta" : "visivel"}</strong></div>
+          <div><span></span><strong>Galeria ${galleryCount ? "personalizada" : "com fotos do tema"}</strong></div>
+        </div>
+      </section>
+
+      <section class="panel-card panel-preview-card">
+        <div class="panel-section-head">
+          <div>
+            <h2>Previa ao vivo</h2>
+            <p>Como o site abre para os convidados.</p>
+          </div>
+          <a class="mini-button" href="site.html?site=${encodeURIComponent(site.slug)}">Abrir</a>
+        </div>
+        <div class="panel-preview">
+          <iframe title="Previa do site" src="site.html?site=${encodeURIComponent(site.slug)}"></iframe>
+        </div>
+      </section>
+    </div>
+  `;
+}
+
 function renderLayoutPanel(site) {
   setHeader("Personalizar layout", "Ajuste tema, cores e fotos");
   contentEl.innerHTML = `
@@ -742,7 +811,7 @@ function navigate(key, site) {
   if (key === "settings") return renderSettingsPanel(site);
 
   const routes = {
-    site: () => renderSitePanel(site),
+    site: () => renderDashboardPanel(site),
     pages: () => renderPlaceholder("Páginas", "Organize as páginas do seu site", "Aqui você vai poder ativar/desativar páginas e reordenar seções."),
     layout: () => renderLayoutPanel(site),
     monogram: () => renderPlaceholder("Monograma", "Sua marca do casal", "Vamos criar um monograma com as iniciais e aplicar no topo do site."),

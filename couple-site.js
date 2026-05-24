@@ -372,6 +372,134 @@ giftGrid.addEventListener("click", (event) => {
   button.textContent = "Selecionado";
 });
 
+const giftCheckout = document.createElement("aside");
+giftCheckout.className = "gift-checkout-panel";
+giftCheckout.tabIndex = -1;
+giftCheckout.innerHTML = `
+  <div class="gift-checkout-head">
+    <div>
+      <span class="eyebrow">Seu presente</span>
+      <h3>Carrinho</h3>
+    </div>
+    <button class="mini-button gift-clear" type="button">Limpar</button>
+  </div>
+  <div class="gift-checkout-items"></div>
+  <div class="gift-checkout-total">
+    <span>Total</span>
+    <strong>R$ 0,00</strong>
+  </div>
+  <form class="gift-checkout-form">
+    <label>Seu nome
+      <input name="name" type="text" placeholder="Ex: Ana Souza" required>
+    </label>
+    <label>WhatsApp
+      <input name="phone" type="tel" placeholder="(11) 99999-9999">
+    </label>
+    <button class="button button-primary" type="submit">Finalizar presente</button>
+  </form>
+`;
+giftGrid.insertAdjacentElement("afterend", giftCheckout);
+
+const selectedGifts = [];
+const checkoutItems = giftCheckout.querySelector(".gift-checkout-items");
+const checkoutTotal = giftCheckout.querySelector(".gift-checkout-total strong");
+const checkoutForm = giftCheckout.querySelector(".gift-checkout-form");
+
+function renderGiftCheckout() {
+  const total = selectedGifts.reduce((sum, gift) => sum + Number(gift.price || 0), 0);
+  giftCheckout.classList.toggle("is-open", selectedGifts.length > 0);
+  checkoutTotal.textContent = currencyFormatter.format(total);
+  giftStatus.textContent = selectedGifts.length
+    ? `${selectedGifts.length} presente(s) selecionado(s). Total: ${currencyFormatter.format(total)}.`
+    : "Nenhum presente selecionado ainda.";
+
+  checkoutItems.innerHTML = selectedGifts.length
+    ? selectedGifts.map((gift, index) => `
+      <article>
+        <div>
+          <strong>${gift.name}</strong>
+          <span>${currencyFormatter.format(gift.price)}</span>
+        </div>
+        <button type="button" aria-label="Remover ${gift.name}" data-remove-gift="${index}">x</button>
+      </article>
+    `).join("")
+    : `<p>Escolha um presente na lista para continuar.</p>`;
+}
+
+giftGrid.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-present]");
+  if (!button) return;
+  event.preventDefault();
+  event.stopImmediatePropagation();
+
+  const gift = displayGifts.find((item) => item.name === button.dataset.present) || {
+    name: button.dataset.present,
+    price: Number(button.dataset.price || 0)
+  };
+  selectedGifts.push(gift);
+  button.textContent = "Selecionado";
+  renderGiftCheckout();
+  giftCheckout.focus({ preventScroll: true });
+}, true);
+
+giftCheckout.addEventListener("click", (event) => {
+  const removeButton = event.target.closest("[data-remove-gift]");
+  if (removeButton) {
+    selectedGifts.splice(Number(removeButton.dataset.removeGift), 1);
+    renderGiftCheckout();
+    return;
+  }
+
+  if (event.target.closest(".gift-clear")) {
+    selectedGifts.length = 0;
+    giftGrid.querySelectorAll("[data-present]").forEach((button) => {
+      button.textContent = "Presentear";
+    });
+    renderGiftCheckout();
+  }
+});
+
+checkoutForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  if (!selectedGifts.length) {
+    giftStatus.textContent = "Escolha pelo menos um presente para finalizar.";
+    return;
+  }
+
+  const data = new FormData(checkoutForm);
+  const total = selectedGifts.reduce((sum, gift) => sum + Number(gift.price || 0), 0);
+  const order = {
+    name: data.get("name"),
+    phone: data.get("phone"),
+    gifts: selectedGifts.map((gift) => ({ name: gift.name, price: gift.price })),
+    total,
+    createdAt: new Date().toISOString()
+  };
+  const ordersKey = `casamentoGiftOrders:${site.slug}`;
+  const orders = JSON.parse(localStorage.getItem(ordersKey) || "[]");
+  orders.unshift(order);
+  localStorage.setItem(ordersKey, JSON.stringify(orders));
+
+  const giftLines = selectedGifts
+    .map((gift) => `- ${gift.name}: ${currencyFormatter.format(gift.price)}`)
+    .join("\n");
+  const message = [
+    `Ola! Quero presentear ${site.couple}.`,
+    "",
+    `Nome: ${order.name}`,
+    order.phone ? `WhatsApp: ${order.phone}` : "",
+    "",
+    giftLines,
+    "",
+    `Total: ${currencyFormatter.format(total)}`
+  ].filter(Boolean).join("\n");
+
+  giftStatus.textContent = "Pedido montado. Abrindo WhatsApp para finalizar.";
+  window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, "_blank", "noopener");
+});
+
+renderGiftCheckout();
+
 const guestsKey = `casamentoGuests:${site.slug}`;
 const guests = JSON.parse(localStorage.getItem(guestsKey) || "[]");
 const notesKey = `casamentoNotes:${site.slug}`;
