@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel - OpsCasei</title>
+  <link rel="icon" href="img/asas.png" type="image/png">
+  <link rel="stylesheet" href="styles.css?v=painel-1">
+</head>
+<body class="panel-page">
+  <header class="panel-topbar">
+    <button class="panel-menu" type="button" aria-label="Abrir menu" aria-expanded="true">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="panel-brand" aria-label="OpsCasei">
+      <img src="img/opslogo.png" alt="OpsCasei">
+      <span>Painel</span>
+    </div>
+    <div class="panel-actions">
+      <a class="button button-outline button-small" id="panel-share" href="#">Compartilhar</a>
+      <a class="button button-primary button-small" id="panel-open-site" href="#">Ver seu site</a>
+    </div>
+  </header>
+
+  <div class="panel-shell">
+    <aside class="panel-sidebar" aria-label="Navegação do painel">
+      <div class="panel-profile">
+        <div class="panel-avatar" aria-hidden="true"></div>
+        <div class="panel-profile-text">
+          <strong id="panel-couple">Seu site</strong>
+          <span id="panel-countdown">Carregando...</span>
+        </div>
+      </div>
+
+      <nav class="panel-nav">
+        <button type="button" class="panel-item is-active" data-panel="site">
+          <span class="panel-ico" aria-hidden="true">▦</span>
+          <span class="panel-item-text">
+            <strong>Site</strong>
+            <small>Personalize e edite cada detalhe</small>
+          </span>
+          <span class="panel-chevron" aria-hidden="true">›</span>
+        </button>
+
+        <button type="button" class="panel-item" data-panel="pages">
+          <span class="panel-ico" aria-hidden="true">≡</span>
+          <span class="panel-item-text"><strong>Páginas</strong></span>
+          <span class="panel-chevron" aria-hidden="true">›</span>
+        </button>
+
+        <button type="button" class="panel-item" data-panel="layout">
+          <span class="panel-ico" aria-hidden="true">✎</span>
+          <span class="panel-item-text"><strong>Layout do site</strong></span>
+          <span class="panel-chevron" aria-hidden="true">›</span>
+        </button>
+
+        <button type="button" class="panel-item" data-panel="monogram">
+          <span class="panel-ico" aria-hidden="true">◎</span>
+          <span class="panel-item-text"><strong>Monograma</strong></span>
+          <span class="panel-pill">Novo</span>
+          <span class="panel-chevron" aria-hidden="true">›</span>
+        </button>
+
+        <button type="button" class="panel-item is-disabled" data-panel="intro">
+          <span class="panel-ico" aria-hidden="true">▣</span>
+          <span class="panel-item-text"><strong>Introdução animada</strong></span>
+          <span class="panel-chevron" aria-hidden="true">›</span>
+        </button>
+
+        <button type="button" class="panel-item" data-panel="address">
+          <span class="panel-ico" aria-hidden="true">⌁</span>
+          <span class="panel-item-text"><strong>Endereço personalizado</strong></span>
+          <span class="panel-chevron" aria-hidden="true">›</span>
+        </button>
+
+        <div class="panel-sep"><span>Recursos</span></div>
+
+        <button type="button" class="panel-item" data-panel="albums">
+          <span class="panel-ico" aria-hidden="true">▢</span>
+          <span class="panel-item-text"><strong>Álbuns de fotos</strong></span>
+          <span class="panel-chevron" aria-hidden="true">›</span>
+        </button>
+
+        <button type="button" class="panel-item" data-panel="messages">
+          <span class="panel-ico" aria-hidden="true">✉</span>
+          <span class="panel-item-text"><strong>Mensagens</strong></span>
+          <span class="panel-chevron" aria-hidden="true">›</span>
+        </button>
+
+        <button type="button" class="panel-item" data-panel="polls">
+          <span class="panel-ico" aria-hidden="true">☑</span>
+          <span class="panel-item-text"><strong>Enquetes</strong></span>
+          <span class="panel-chevron" aria-hidden="true">›</span>
+        </button>
+
+        <button type="button" class="panel-item is-disabled" data-panel="music">
+          <span class="panel-ico" aria-hidden="true">♪</span>
+          <span class="panel-item-text"><strong>Músicas</strong></span>
+          <span class="panel-chevron" aria-hidden="true">›</span>
+        </button>
+
+        <div class="panel-sep"><span>Sobre o casamento</span></div>
+
+        <button type="button" class="panel-item" data-panel="about">
+          <span class="panel-ico" aria-hidden="true">⎙</span>
+          <span class="panel-item-text"><strong>Detalhes</strong></span>
+          <span class="panel-chevron" aria-hidden="true">›</span>
+        </button>
+
+        <button type="button" class="panel-item" data-panel="settings">
+          <span class="panel-ico" aria-hidden="true">⚙</span>
+          <span class="panel-item-text"><strong>Configurações</strong></span>
+          <span class="panel-chevron" aria-hidden="true">›</span>
+        </button>
+      </nav>
+    </aside>
+
+    <main class="panel-main" aria-live="polite">
+      <header class="panel-header">
+        <a class="panel-back" href="index.html" aria-label="Voltar para o site">←</a>
+        <div>
+          <h1 id="panel-title">Site</h1>
+          <p id="panel-subtitle">Personalize e edite cada detalhe</p>
+        </div>
+      </header>
+
+      <section class="panel-content" id="panel-content"></section>
+    </main>
+  </div>
+
+  <script src="firebase-data.js?v=firebase-1"></script>
+  <script src="painel.js?v=painel-5"></script>
+</body>
+</html>

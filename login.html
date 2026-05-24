@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrar - OpsCasei</title>
+  <link rel="icon" href="img/asas.png" type="image/png">
+  <link rel="stylesheet" href="styles.css?v=login-email-5">
+</head>
+<body class="login-page">
+  <main class="login-shell">
+   
+
+    <section class="login-card" aria-labelledby="login-title">
+      <h1 id="login-title">Entrar na sua conta</h1>
+      <a class="login-card-logo" href="index.html" aria-label="OpsCasei">
+        <img class="brand-symbol" src="img/opslogo.png" alt="OpsCasei">
+      </a>
+      <span class="login-eyebrow">Area dos noivos</span>
+      <p>Acesse seu site, lista de presentes e confirmacoes em um so lugar.</p>
+
+      <form class="login-form" id="login-form">
+        <input type="hidden" name="authAction" id="auth-action" value="signin">
+        <label class="input-group">
+          <span>E-mail</span>
+          <span class="input-shell">
+            <span class="input-icon" aria-hidden="true">@</span>
+            <input name="email" type="email" autocomplete="email" placeholder="seuemail@exemplo.com" required>
+          </span>
+        </label>
+
+        <label class="input-group">
+          <span>Senha</span>
+          <span class="input-shell">
+            <span class="input-icon" aria-hidden="true">*</span>
+            <input name="password" type="password" autocomplete="current-password" placeholder="Digite sua senha" required>
+          </span>
+        </label>
+
+        <div class="login-options">
+          <label class="remember-login">
+            <input name="remember" type="checkbox" checked>
+            <span>Manter login ativo</span>
+          </label>
+          <a href="#recuperar" id="forgot-password">Esqueci minha senha</a>
+        </div>
+
+        <div class="login-actions">
+          <button class="button button-primary login-submit" type="button" id="signin-button">Entrar</button>
+          <button class="button button-outline login-submit" type="button" id="signup-button">Criar conta</button>
+        </div>
+        <p class="login-feedback" id="login-feedback" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <script src="login.js?v=login-email-7"></script>
+</body>
+</html>

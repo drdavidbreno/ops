@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpsCasei - Site de casamento</title>
+  <link rel="icon" href="img/asas.png" type="image/png">
+  <link rel="stylesheet" href="styles.css?v=themes-10">
+</head>
+<body>
+  <header class="site-header" id="topo">
+    <div class="container header-inner">
+      <a class="brand" href="#topo" aria-label="Página inicial">
+        <img class="brand-symbol" src="img/opslogo.png" alt="OpsCasei">
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="#topo">Home</a>
+        <a href="#casal">O Casal</a>
+        <a href="#cerimonia">Cerimônia</a>
+        <a href="#recepcao">Recepção</a>
+        <a href="#lista">Lista de Presentes</a>
+        <a href="#rsvp">Confirme sua Presença</a>
+        <a href="#recados">Recados</a>
+        <a href="sobre.html">Sobre</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="login-link" href="login.html">Entrar</a>
+        <a class="button button-primary button-small js-open-modal" href="#criar" data-modal="site-builder">Criar site grátis</a>
+      </div>
+    </div>
+    <div class="header-tagline">
+      <span>Seu site de casamento merece ser <em>inesquecível</em></span>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-slider" aria-hidden="true">
+        <div class="hero-slide hero-slide-one"></div>
+        <div class="hero-slide hero-slide-two"></div>
+        <div class="hero-slide hero-slide-three"></div>
+        <div class="hero-slide hero-slide-four"></div>
+        <div class="hero-slide hero-slide-five"></div>
+        <div class="hero-slide hero-slide-six"></div>
+        <div class="hero-slide hero-slide-seven"></div>
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <div class="hero-copy">
+         
+        </div>
+        <div class="hero-actions">
+          <a class="button button-white js-open-modal" href="#criar" data-modal="site-builder">Criar site grátis</a>
+          <a class="button button-ghost js-open-modal" href="#buscar" data-modal="couple-search">Buscar casal</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section couple-showcase" id="casal">
+      <div class="container couple-grid">
+        <div class="couple-media">
+          <img class="couple-main-photo" src="img/01 (7).png" alt="Casal na praia ao pôr do sol">
+          <div class="couple-gallery-strip" aria-label="Galeria do casal">
+            <img src="img/01 (3).png" alt="Casal em frente à igreja">
+            <img src="img/01 (4).png" alt="Casal caminhando na praia">
+            <img src="img/01 (5).png" alt="Casal correndo no mar">
+          </div>
+        </div>
+        <div class="copy-block couple-copy">
+          <span class="eyebrow">O Casal</span>
+          <h2>Ana & Miguel</h2>
+          <p>Uma história leve, feita de encontros simples, planos divididos e muita vontade de celebrar com quem fez parte do caminho.</p>
+          <p>O site reúne a cerimônia, recepção, lista de presentes, confirmação de presença e recados em uma experiência bonita para os convidados.</p>
+          <div class="couple-signature">20 de setembro de 2026</div>
+          <div class="section-actions">
+            <a class="button button-primary" href="#cerimonia">Ver detalhes</a>
+            <a class="button button-outline" href="#recados">Deixar recado</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section event-section" id="cerimonia">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Cerimônia e recepção</span>
+          <h2>Todos os detalhes do grande dia</h2>
+          <p>Horários, endereços e informações importantes ficam claros para cada convidado.</p>
+        </div>
+        <div class="event-grid">
+          <article class="event-card">
+            <span class="event-label">Cerimônia</span>
+            <h3>Igreja Nossa Senhora do Carmo</h3>
+            <p>20/09/2026 às 16h. Chegue com antecedência para aproveitar a entrada e as fotos na escadaria.</p>
+            <strong>Estacionamento ao lado da praça</strong>
+          </article>
+          <article class="event-card" id="recepcao">
+            <span class="event-label">Recepção</span>
+            <h3>Espaço Jardim das Flores</h3>
+            <p>Coquetel, jantar e festa a partir das 18h. O local fica a 12 minutos da cerimônia.</p>
+            <strong>Hotéis parceiros próximos ao salão</strong>
+          </article>
+          <article class="countdown-card">
+            <span class="event-label">Contagem regressiva</span>
+            <h3>Faltam</h3>
+            <div class="countdown-grid" data-countdown="2026-09-20T16:00:00-03:00">
+              <div><strong data-countdown-days>0</strong><span>Dias</span></div>
+              <div><strong data-countdown-hours>0</strong><span>Horas</span></div>
+              <div><strong data-countdown-minutes>0</strong><span>Min</span></div>
+              <div><strong data-countdown-seconds>0</strong><span>Seg</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section map-section" id="localizacao">
+      <div class="container map-grid">
+        <div class="copy-block">
+          <span class="eyebrow">Mapas e localização</span>
+          <h2>Como chegar sem erro</h2>
+          <p>Inclua o mapa da cerimônia e da recepção, além de pontos úteis como estacionamento, hotéis e rotas para convidados de fora.</p>
+          <div class="location-points">
+            <span>Estacionamento monitorado</span>
+            <span>Hotéis a 8 minutos</span>
+            <span>Recepção próxima à cerimônia</span>
+          </div>
+        </div>
+        <div class="map-embed" aria-label="Mapa da localização">
+          <iframe title="Mapa da cerimônia" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Igreja%20Nossa%20Senhora%20do%20Carmo%20Ouro%20Preto&output=embed"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="section layouts" id="layouts">
+      <div class="container">
+        <div class="section-heading theme-heading">
+          <h2>Escolha o estilo do seu site</h2>
+          <p>Cada tema foi criado para contar a sua história do seu jeito.</p>
+        </div>
+        <div class="layout-grid">
+          <article class="layout-card theme-forest-card" tabindex="0" data-layout-theme="forest" aria-label="Abrir tema Clássico">
+            <img src="img/01 (3).png" alt="Tema clássico com igreja histórica">
+            <div class="layout-overlay"></div>
+            <div class="layout-shine" aria-hidden="true"></div>
+            <div class="layout-content">
+              <div class="layout-topline">
+                <span class="layout-kicker">01 • CLÁSSICO</span>
+                <span class="layout-price">R$ 97</span>
+              </div>
+              <h3>Ana & Miguel</h3>
+              <p>Floresta elegante</p>
+              <div class="theme-palette" aria-label="Paleta do tema">
+                <span class="swatch-forest-one"></span>
+                <span class="swatch-forest-two"></span>
+                <span class="swatch-forest-three"></span>
+              </div>
+              <ul class="layout-features" aria-label="Recursos do tema">
+                <li>🏛 Cerimônia</li>
+                <li>🎁 Lista de presentes</li>
+                <li>✅ RSVP</li>
+                <li>🖼 Galeria</li>
+                <li>⏳ Contagem regressiva</li>
+              </ul>
+              <div class="layout-actions">
+                <button type="button" data-theme-demo="forest">Ver demonstração</button>
+                <button type="button" data-theme-buy="forest">Comprar agora</button>
+              </div>
+            </div>
+          </article>
+          <article class="layout-card theme-monochrome" tabindex="0" data-layout-theme="classic" aria-label="Abrir tema Preto e branco">
+            <img src="img/01 (4).png" alt="Tema preto e branco na praia ao pôr do sol">
+            <div class="layout-overlay"></div>
+            <div class="layout-shine" aria-hidden="true"></div>
+            <div class="layout-content">
+              <div class="layout-topline">
+                <span class="layout-kicker">02 • PRETO E BRANCO</span>
+                <span class="layout-price">R$ 97</span>
+              </div>
+              <h3>Clara & João</h3>
+              <p>Preto e branco</p>
+              <div class="theme-palette" aria-label="Paleta do tema">
+                <span class="swatch-classic-one"></span>
+                <span class="swatch-classic-two"></span>
+                <span class="swatch-classic-three"></span>
+              </div>
+              <ul class="layout-features" aria-label="Recursos do tema">
+                <li>🏛 Cerimônia</li>
+                <li>🎁 Lista de presentes</li>
+                <li>✅ RSVP</li>
+                <li>🖼 Galeria</li>
+                <li>⏳ Contagem regressiva</li>
+              </ul>
+              <div class="layout-actions">
+                <button type="button" data-theme-demo="classic">Ver demonstração</button>
+                <button type="button" data-theme-buy="classic">Comprar agora</button>
+              </div>
+            </div>
+          </article>
+          <article class="layout-card theme-editorial-card" tabindex="0" data-layout-theme="photo" aria-label="Abrir tema Editorial">
+            <img src="img/01 (5).png" alt="Tema editorial com casal correndo no mar">
+            <div class="layout-overlay"></div>
+            <div class="layout-shine" aria-hidden="true"></div>
+            <div class="layout-content">
+              <div class="layout-topline">
+                <span class="layout-kicker">03 • EDITORIAL</span>
+                <span class="layout-price">R$ 127</span>
+              </div>
+              <h3>Marina & Theo</h3>
+              <p>Editorial romântico</p>
+              <div class="theme-palette" aria-label="Paleta do tema">
+                <span class="swatch-photo-one"></span>
+                <span class="swatch-photo-two"></span>
+                <span class="swatch-photo-three"></span>
+              </div>
+              <ul class="layout-features" aria-label="Recursos do tema">
+                <li>🏛 Cerimônia</li>
+                <li>🎁 Lista de presentes</li>
+                <li>✅ RSVP</li>
+                <li>🖼 Galeria</li>
+                <li>⏳ Contagem regressiva</li>
+              </ul>
+              <div class="layout-actions">
+                <button type="button" data-theme-demo="photo">Ver demonstração</button>
+                <button type="button" data-theme-buy="photo">Comprar agora</button>
+              </div>
+            </div>
+          </article>
+          <article class="layout-card theme-blush-card" tabindex="0" data-layout-theme="blush" aria-label="Abrir tema Minimal">
+            <img src="img/01 (7).png" alt="Tema minimal com casal na praia">
+            <div class="layout-overlay"></div>
+            <div class="layout-shine" aria-hidden="true"></div>
+            <div class="layout-content">
+              <div class="layout-topline">
+                <span class="layout-kicker">04 • MINIMAL</span>
+                <span class="layout-price">R$ 97</span>
+              </div>
+              <h3>Helena & Davi</h3>
+              <p>Minimal delicado</p>
+              <div class="theme-palette" aria-label="Paleta do tema">
+                <span class="swatch-blush-one"></span>
+                <span class="swatch-blush-two"></span>
+                <span class="swatch-blush-three"></span>
+              </div>
+              <ul class="layout-features" aria-label="Recursos do tema">
+                <li>🏛 Cerimônia</li>
+                <li>🎁 Lista de presentes</li>
+                <li>✅ RSVP</li>
+                <li>🖼 Galeria</li>
+                <li>⏳ Contagem regressiva</li>
+              </ul>
+              <div class="layout-actions">
+                <button type="button" data-theme-demo="blush">Ver demonstração</button>
+                <button type="button" data-theme-buy="blush">Comprar agora</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gift-list" id="lista">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Lista de Presentes</span>
+          <h2>Presentes simbólicos recebidos em dinheiro</h2>
+          <p>Cards uniformes, valores configuráveis e carrinho simulado para mostrar exatamente como o convidado vai presentear.</p>
+        </div>
+        <div class="gift-board">
+          <div class="gift-carousel">
+            <div class="gift-carousel-controls" aria-label="Navegar presentes">
+              <button class="gift-arrow" type="button" id="showcase-gift-prev" aria-label="Ver presentes anteriores">‹</button>
+              <span id="showcase-gift-page">1 / 1</span>
+              <button class="gift-arrow" type="button" id="showcase-gift-next" aria-label="Ver próximos presentes">›</button>
+            </div>
+            <div class="gift-products" id="showcase-gift-products">
+            <article class="gift-card">
+              <img src="img/tel.png" alt="Cota de lua de mel">
+              <div>
+                <span>Lua de mel</span>
+                <h3>Cota de viagem</h3>
+                <p>Ajuda para a primeira viagem do casal.</p>
+                <strong>R$ 450,00</strong>
+                <button type="button" data-showcase-gift="0">Presentear</button>
+              </div>
+            </article>
+            <article class="gift-card">
+              <img src="img/01 (4).png" alt="Jantar romântico">
+              <div>
+                <span>Experiência</span>
+                <h3>Jantar romântico</h3>
+                <p>Uma noite especial depois do casamento.</p>
+                <strong>R$ 260,00</strong>
+                <button type="button" data-showcase-gift="1">Presentear</button>
+              </div>
+            </article>
+            <article class="gift-card">
+              <img src="img/01 (6).png" alt="Mobília da casa nova">
+              <div>
+                <span>Casa nova</span>
+                <h3>Mobília da sala</h3>
+                <p>Ajuda para montar o novo lar.</p>
+                <strong>R$ 680,00</strong>
+                <button type="button" data-showcase-gift="2">Presentear</button>
+              </div>
+            </article>
+            <article class="gift-card">
+              <img src="img/01 (5).png" alt="Álbum de fotos">
+              <div>
+                <span>Memórias</span>
+                <h3>Álbum do casamento</h3>
+                <p>Fotos impressas para guardar para sempre.</p>
+                <strong>R$ 320,00</strong>
+                <button type="button" data-showcase-gift="3">Presentear</button>
+              </div>
+            </article>
+            <article class="gift-card">
+              <img src="img/01 (7).png" alt="Passagem aerea">
+              <div>
+                <span>Viagem</span>
+                <h3>Passagem aerea</h3>
+                <p>Cota para chegar ao destino da lua de mel.</p>
+                <strong>R$ 550,00</strong>
+                <button type="button" data-showcase-gift="4">Presentear</button>
+              </div>
+            </article>
+            <article class="gift-card">
+              <img src="img/01 (3).png" alt="Diaria em hotel">
+              <div>
+                <span>Lua de mel</span>
+                <h3>Diaria em hotel</h3>
+                <p>Uma noite especial para descansar depois da festa.</p>
+                <strong>R$ 690,00</strong>
+                <button type="button" data-showcase-gift="5">Presentear</button>
+              </div>
+            </article>
+            <article class="gift-card">
+              <img src="img/tel.png" alt="Cafe da manha">
+              <div>
+                <span>Experiencia</span>
+                <h3>Cafe da manha</h3>
+                <p>Um cafe caprichado para o primeiro domingo casados.</p>
+                <strong>R$ 180,00</strong>
+                <button type="button" data-showcase-gift="6">Presentear</button>
+              </div>
+            </article>
+            <article class="gift-card">
+              <img src="img/01 (4).png" alt="Day spa do casal">
+              <div>
+                <span>Relax</span>
+                <h3>Day spa do casal</h3>
+                <p>Um dia de descanso e cuidado a dois.</p>
+                <strong>R$ 410,00</strong>
+                <button type="button" data-showcase-gift="7">Presentear</button>
+              </div>
+            </article>
+            <article class="gift-card">
+              <img src="img/01 (5).png" alt="Passeio de barco">
+              <div>
+                <span>Aventura</span>
+                <h3>Passeio de barco</h3>
+                <p>Uma experiencia leve para guardar na memoria.</p>
+                <strong>R$ 430,00</strong>
+                <button type="button" data-showcase-gift="8">Presentear</button>
+              </div>
+            </article>
+            <article class="gift-card">
+              <img src="img/01 (6).png" alt="Kit panelas">
+              <div>
+                <span>Cozinha</span>
+                <h3>Kit panelas</h3>
+                <p>Para estrear a cozinha da casa nova.</p>
+                <strong>R$ 780,00</strong>
+                <button type="button" data-showcase-gift="9">Presentear</button>
+              </div>
+            </article>
+            <article class="gift-card">
+              <img src="img/tel.png" alt="Cafeteira dos sonhos">
+              <div>
+                <span>Casa nova</span>
+                <h3>Cafeteira dos sonhos</h3>
+                <p>Cafe quentinho para os primeiros dias juntos.</p>
+                <strong>R$ 460,00</strong>
+                <button type="button" data-showcase-gift="10">Presentear</button>
+              </div>
+            </article>
+            <article class="gift-card">
+              <img src="img/01 (3).png" alt="Aparelho de jantar">
+              <div>
+                <span>Mesa posta</span>
+                <h3>Aparelho de jantar</h3>
+                <p>Uma mesa bonita para receber familia e amigos.</p>
+                <strong>R$ 390,00</strong>
+                <button type="button" data-showcase-gift="11">Presentear</button>
+              </div>
+            </article>
+            <article class="gift-card">
+              <img src="img/01 (7).png" alt="Enxoval banho e cama">
+              <div>
+                <span>Enxoval</span>
+                <h3>Enxoval banho e cama</h3>
+                <p>Toalhas e lencois macios para o novo lar.</p>
+                <strong>R$ 350,00</strong>
+                <button type="button" data-showcase-gift="12">Presentear</button>
+              </div>
+            </article>
+            <article class="gift-card">
+              <img src="img/01 (4).png" alt="Adega climatizada">
+              <div>
+                <span>Brindes</span>
+                <h3>Adega climatizada</h3>
+                <p>Para guardar os vinhos dos proximos brindes.</p>
+                <strong>R$ 930,00</strong>
+                <button type="button" data-showcase-gift="13">Presentear</button>
+              </div>
+            </article>
+            <article class="gift-card">
+              <img src="img/01 (6).png" alt="Robo aspirador">
+              <div>
+                <span>Praticidade</span>
+                <h3>Robo aspirador</h3>
+                <p>Mais tempo livre para curtir a vida a dois.</p>
+                <strong>R$ 720,00</strong>
+                <button type="button" data-showcase-gift="14">Presentear</button>
+              </div>
+            </article>
+            <article class="gift-card">
+              <img src="img/01 (5).png" alt="Decoracao da sala">
+              <div>
+                <span>Decoracao</span>
+                <h3>Decoracao da sala</h3>
+                <p>Um detalhe bonito para deixar o lar com a cara do casal.</p>
+                <strong>R$ 270,00</strong>
+                <button type="button" data-showcase-gift="15">Presentear</button>
+              </div>
+            </article>
+            <article class="gift-card">
+              <img src="img/01 (3).png" alt="Assinatura de vinhos">
+              <div>
+                <span>Brindes</span>
+                <h3>Assinatura de vinhos</h3>
+                <p>Para brindar todo mes ao novo capitulo.</p>
+                <strong>R$ 360,00</strong>
+                <button type="button" data-showcase-gift="16">Presentear</button>
+              </div>
+            </article>
+            <article class="gift-card">
+              <img src="img/tel.png" alt="Compra de mercado">
+              <div>
+                <span>Casa nova</span>
+                <h3>Compra de mercado</h3>
+                <p>Aquela primeira compra caprichada para a despensa.</p>
+                <strong>R$ 240,00</strong>
+                <button type="button" data-showcase-gift="17">Presentear</button>
+              </div>
+            </article>
+            <article class="gift-card">
+              <img src="img/01 (4).png" alt="Pizza da mudanca">
+              <div>
+                <span>Mudanca</span>
+                <h3>Pizza da mudanca</h3>
+                <p>Porque todo lar comeca melhor com pizza.</p>
+                <strong>R$ 110,00</strong>
+                <button type="button" data-showcase-gift="18">Presentear</button>
+              </div>
+            </article>
+            <article class="gift-card">
+              <img src="img/01 (7).png" alt="Plantas para o lar">
+              <div>
+                <span>Decoracao</span>
+                <h3>Plantas para o lar</h3>
+                <p>Verde, vida e um cantinho mais acolhedor.</p>
+                <strong>R$ 170,00</strong>
+                <button type="button" data-showcase-gift="19">Presentear</button>
+              </div>
+            </article>
+            <article class="gift-card">
+              <img src="img/01 (5).png" alt="Aula de danca">
+              <div>
+                <span>Experiencia</span>
+                <h3>Aula de danca</h3>
+                <p>Para repetir a primeira danca sem pisar no pe.</p>
+                <strong>R$ 280,00</strong>
+                <button type="button" data-showcase-gift="20">Presentear</button>
+              </div>
+            </article>
+            <article class="gift-card">
+              <img src="img/01 (3).png" alt="Massagem pos-festa">
+              <div>
+                <span>Relax</span>
+                <h3>Massagem pos-festa</h3>
+                <p>Recuperacao oficial depois de dancar a noite toda.</p>
+                <strong>R$ 300,00</strong>
+                <button type="button" data-showcase-gift="21">Presentear</button>
+              </div>
+            </article>
+            <article class="gift-card">
+              <img src="img/01 (7).png" alt="Brinde ao por do sol">
+              <div>
+                <span>Celebracao</span>
+                <h3>Brinde ao por do sol</h3>
+                <p>Um momento especial para brindar depois do grande dia.</p>
+                <strong>R$ 190,00</strong>
+                <button type="button" data-showcase-gift="22">Presentear</button>
+              </div>
+            </article>
+            <article class="gift-card">
+              <img src="img/01 (5).png" alt="Album extra">
+              <div>
+                <span>Memorias</span>
+                <h3>Album extra</h3>
+                <p>Mais fotos impressas para dividir com a familia.</p>
+                <strong>R$ 250,00</strong>
+                <button type="button" data-showcase-gift="23">Presentear</button>
+              </div>
+            </article>
+            <article class="gift-card">
+              <img src="img/01 (3).png" alt="Porta-retratos">
+              <div>
+                <span>Memorias</span>
+                <h3>Porta-retratos</h3>
+                <p>Para guardar as fotos favoritas do grande dia.</p>
+                <strong>R$ 150,00</strong>
+                <button type="button" data-showcase-gift="24">Presentear</button>
+              </div>
+            </article>
+            <article class="gift-card">
+              <img src="img/tel.png" alt="Panquecas de domingo">
+              <div>
+                <span>Cafe</span>
+                <h3>Panquecas de domingo</h3>
+                <p>Para um cafe da manha demorado e feliz.</p>
+                <strong>R$ 85,00</strong>
+                <button type="button" data-showcase-gift="25">Presentear</button>
+              </div>
+            </article>
+            <article class="gift-card">
+              <img src="img/01 (4).png" alt="Gasolina da lua de mel">
+              <div>
+                <span>Estrada</span>
+                <h3>Gasolina da lua de mel</h3>
+                <p>Para o roteiro render mais historias.</p>
+                <strong>R$ 220,00</strong>
+                <button type="button" data-showcase-gift="26">Presentear</button>
+              </div>
+            </article>
+            <article class="gift-card">
+              <img src="img/01 (6).png" alt="Kit banho premium">
+              <div>
+                <span>Spa</span>
+                <h3>Kit banho premium</h3>
+                <p>Sabonetes, aromas e clima de descanso.</p>
+                <strong>R$ 260,00</strong>
+                <button type="button" data-showcase-gift="27">Presentear</button>
+              </div>
+            </article>
+            <article class="gift-card">
+              <img src="img/01 (7).png" alt="Mini bar dos convidados">
+              <div>
+                <span>Festa</span>
+                <h3>Mini bar dos convidados</h3>
+                <p>Um reforco divertido para animar os brindes.</p>
+                <strong>R$ 390,00</strong>
+                <button type="button" data-showcase-gift="28">Presentear</button>
+              </div>
+            </article>
+            <article class="gift-card">
+              <img src="img/01 (6).png" alt="Moveis do quarto">
+              <div>
+                <span>Casa nova</span>
+                <h3>Moveis do quarto</h3>
+                <p>Ajuda para montar um quarto bonito e confortavel.</p>
+                <strong>R$ 740,00</strong>
+                <button type="button" data-showcase-gift="29">Presentear</button>
+              </div>
+            </article>
+            <article class="gift-card">
+              <img src="img/tel.png" alt="Utensilios de cozinha">
+              <div>
+                <span>Cozinha</span>
+                <h3>Utensilios de cozinha</h3>
+                <p>Itens uteis para cozinhar as primeiras receitas.</p>
+                <strong>R$ 230,00</strong>
+                <button type="button" data-showcase-gift="30">Presentear</button>
+              </div>
+            </article>
+            <article class="gift-card">
+              <img src="img/01 (4).png" alt="Noite romantica">
+              <div>
+                <span>Experiencia</span>
+                <h3>Noite romantica</h3>
+                <p>Uma reserva especial para o casal comemorar.</p>
+                <strong>R$ 520,00</strong>
+                <button type="button" data-showcase-gift="31">Presentear</button>
+              </div>
+            </article>
+            <article class="gift-card">
+              <img src="img/01 (5).png" alt="Experiencia gastronomica">
+              <div>
+                <span>Experiencia</span>
+                <h3>Experiencia gastronomica</h3>
+                <p>Um menu especial para uma noite memoravel.</p>
+                <strong>R$ 300,00</strong>
+                <button type="button" data-showcase-gift="32">Presentear</button>
+              </div>
+            </article>
+            <article class="gift-card">
+              <img src="img/01 (3).png" alt="Fundo da casa nova">
+              <div>
+                <span>Casa nova</span>
+                <h3>Fundo da casa nova</h3>
+                <p>Ajuda simbolica para os primeiros planos do novo lar.</p>
+                <strong>R$ 650,00</strong>
+                <button type="button" data-showcase-gift="33">Presentear</button>
+              </div>
+            </article>
+            </div>
+          </div>
+          <aside class="gift-cart-panel" aria-live="polite">
+            <span class="eyebrow">Carrinho simulado</span>
+            <h3>Presentes selecionados</h3>
+            <div class="showcase-cart" id="showcase-cart">
+              <p>Nenhum presente selecionado ainda.</p>
+            </div>
+            <div class="gift-totals">
+              <div><span>Subtotal</span><strong id="showcase-subtotal">R$ 0,00</strong></div>
+              <div><span>Taxa 3,89%</span><strong id="showcase-fee">R$ 0,00</strong></div>
+              <div><span>Total</span><strong id="showcase-total">R$ 0,00</strong></div>
+            </div>
+            <p class="fee-note">A taxa de serviço é 3,89% por presente selecionado.</p>
+            <button class="button button-primary" type="button" id="showcase-clear">Limpar carrinho</button>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section rsvp-section" id="rsvp">
+      <div class="container rsvp-grid">
+        <div class="copy-block">
+          <span class="eyebrow">Confirme sua Presença</span>
+          <h2>RSVP simples e bonito</h2>
+          <p>Acompanhe quem confirmou, quem ainda está pendente e quem não poderá comparecer, tudo com visual limpo.</p>
+          <button class="button button-primary" type="button" id="rsvp-confirm">Confirmar minha presença</button>
+        </div>
+        <div class="guest-status-board">
+          <article><span class="status-dot confirmed"></span><strong>Marina Souza</strong><p>Confirmado</p></article>
+          <article><span class="status-dot pending"></span><strong>Paulo Mendes</strong><p>Pendente</p></article>
+          <article><span class="status-dot canceled"></span><strong>Clara Ribeiro</strong><p>Cancelado</p></article>
+          <article><span class="status-dot confirmed"></span><strong>Família Almeida</strong><p>Confirmado</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compare-section" id="comparativo">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Comparativo</span>
+          <h2>Condições claras para decidir com segurança</h2>
+        </div>
+        <div class="compare-table" role="table" aria-label="Comparativo de condições">
+          <div class="compare-row compare-head" role="row">
+            <span>Serviço</span><span>OPSCASEI</span><span>Concorrentes</span>
+          </div>
+          <div class="compare-row" role="row">
+            <span>Site personalizado</span><strong>Incluso</strong><span>Plano pago</span>
+          </div>
+          <div class="compare-row" role="row">
+            <span>Lista em dinheiro</span><strong>3,89%</strong><span>4,99% a 6,99%</span>
+          </div>
+          <div class="compare-row" role="row">
+            <span>RSVP e recados</span><strong>Incluso</strong><span>Limitado</span>
+          </div>
+          <div class="compare-row" role="row">
+            <span>Temas premium</span><strong>4 estilos</strong><span>Catálogo básico</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section planner-section" id="assessorias">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Assessorias e cerimonialistas</span>
+          <h2>Profissionais para deixar tudo no lugar</h2>
+        </div>
+        <div class="planner-grid">
+          <article>
+            <img src="img/mulher.png" alt="Assessoria Bella Festa">
+            <div>
+              <h3>Bella Festa</h3>
+              <p>4.9 de avaliação</p>
+              <span>São Paulo, SP</span>
+            </div>
+          </article>
+          <article>
+            <img src="img/01 (3).png" alt="Cerimonial Jardim">
+            <div>
+              <h3>Cerimonial Jardim</h3>
+              <p>4.8 de avaliação</p>
+              <span>Ouro Preto, MG</span>
+            </div>
+          </article>
+          <article>
+            <img src="img/01 (7).png" alt="Ateliê do Sim">
+            <div>
+              <h3>Ateliê do Sim</h3>
+              <p>5.0 de avaliação</p>
+              <span>Florianópolis, SC</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section notes-section" id="recados">
+      <div class="container notes-grid">
+        <div class="copy-block">
+          <span class="eyebrow">Recados</span>
+          <h2>Mensagens dos convidados</h2>
+          <p>Um espaço carinhoso para os convidados deixarem votos, lembranças e mensagens para o casal.</p>
+          <button class="button button-primary" type="button" id="note-button">Deixar recado</button>
+        </div>
+        <div class="note-wall" id="note-wall">
+          <article><p>Que esse dia seja lindo como a história de vocês.</p><strong>Camila</strong></article>
+          <article><p>Estamos contando os dias para celebrar juntos.</p><strong>Família Rocha</strong></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section features" id="recursos">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Mais de 150 recursos</span>
+          <h2>Ferramentas para cada detalhe</h2>
+        </div>
+        <div class="feature-grid">
+          <article>
+            <span class="feature-icon">✓</span>
+            <h3>Confirmação de presença</h3>
+            <p>Convidados confirmam pelo site, app, telefone ou WhatsApp de forma prática.</p>
+          </article>
+          <article>
+            <span class="feature-icon">✉</span>
+            <h3>Convite digital interativo</h3>
+            <p>Modelos personalizáveis para enviar por WhatsApp, Telegram e outros canais.</p>
+          </article>
+          <article>
+            <span class="feature-icon">⌁</span>
+            <h3>Endereço personalizado</h3>
+            <p>Escolha uma URL especial e fácil de lembrar para o site do casal.</p>
+          </article>
+          <article>
+            <span class="feature-icon">★</span>
+            <h3>Assessoria na montagem</h3>
+            <p>Especialistas ajudam a personalizar o site quando você quiser ganhar tempo.</p>
+          </article>
+        </div>
+        <div class="center-actions">
+          <a class="button button-primary js-open-modal" href="#recursos" data-modal="tools-panel">Ver todos os recursos</a>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section testimonials" id="depoimentos">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Depoimentos</span>
+          <h2>Quem usou, aprovou e recomenda!</h2>
+          <p><strong>4.845</strong> casais já avaliaram com nota média de <strong>4.96 de 5</strong>.</p>
+        </div>
+        <div class="testimonial-grid">
+          <article class="testimonial-card">
+            <div class="couple-photo photo-one"></div>
+            <p>Amei a experiência. Super recomendo. Meu site ficou lindo demais!</p>
+            <div class="stars">★★★★★</div>
+            <h3>Jamille e Chandler</h3>
+            <small>28/03/2026 - Barra dos Coqueiros, SE</small>
+          </article>
+          <article class="testimonial-card">
+            <div class="couple-photo photo-two"></div>
+            <p>Foi tudo perfeito e a plataforma fez parte desse momento tão importante.</p>
+            <div class="stars">★★★★★</div>
+            <h3>Natalia e Mateus</h3>
+            <small>11/01/2026 - Rio de Janeiro, RJ</small>
+          </article>
+          <article class="testimonial-card">
+            <div class="couple-photo photo-three"></div>
+            <p>Maravilhoso, eu amei o site. Super fácil de criar e deixar com nossa cara.</p>
+            <div class="stars">★★★★★</div>
+            <h3>Leticia e Tales</h3>
+            <small>07/03/2026 - Franca, SP</small>
+          </article>
+        </div>
+        <div class="center-actions">
+          <a class="button button-outline" href="#depoimentos">Ver mais depoimentos</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq" id="faq">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Dúvidas comuns</span>
+          <h2>Perguntas frequentes</h2>
+        </div>
+        <div class="accordion">
+          <button type="button">Posso testar grátis?<span>+</span></button>
+          <div class="accordion-panel">Sim. A página está preparada para destacar a criação gratuita e depois evoluir para planos pagos.</div>
+          <button type="button">Dá para editar textos e fotos?<span>+</span></button>
+          <div class="accordion-panel">Sim. Esta versão foi feita em arquivos simples para você trocar textos, cores, imagens e links.</div>
+          <button type="button">Funciona no celular?<span>+</span></button>
+          <div class="accordion-panel">Sim. O layout se adapta para desktop, tablet e celular.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-top">
+      <div>
+        <a class="brand footer-brand" href="#topo"><img class="brand-symbol" src="img/opslogo.png" alt="OpsCasei"></a>
+
+        <p>Sites e listas de casamento com visual elegante, recursos completos e uma experiência simples para convidados.</p>
+      </div>
+      <div>
+        <h3>Para os casais</h3>
+        <a href="#casal">O Casal</a>
+        <a href="#lista">Lista de casamento</a>
+        <a href="#rsvp">Confirme sua presença</a>
+      </div>
+      <div>
+        <h3>Links úteis</h3>
+        <a href="#cerimonia">Cerimônia</a>
+        <a href="#recepcao">Recepção</a>
+        <a href="#contato">Fale conosco</a>
+      </div>
+      <div>
+        <h3>Siga a gente</h3>
+        <div class="social-row">
+          <a href="#instagram">Ig</a>
+          <a href="#facebook">Fb</a>
+          <a href="#youtube">Yt</a>
+          <a href="#linkedin">In</a>
+        </div>
+        <div class="footer-seals">
+          <span>RA 1000</span>
+          <span>GPTW</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+
+    
+      </div>
+    </div>
+  </footer>
+
+  <section class="modal-layer" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+
+    <article class="modal builder-modal" id="site-builder" role="dialog" aria-modal="true" aria-labelledby="site-builder-title">
+      <button class="modal-close" type="button" data-close-modal aria-label="Fechar">×</button>
+      <div class="modal-grid">
+        <form class="tool-form" id="builder-form">
+          <span class="eyebrow">Assistente</span>
+          <h2 id="site-builder-title">Criar site grátis</h2>
+          <p class="builder-intro">Preencha os detalhes principais e veja a previa mudar na hora.</p>
+          <label>Nome do casal
+            <input name="couple" type="text" value="Lívia & Rafael" required>
+          </label>
+          <label>Data do casamento
+            <input name="date" type="date" value="2026-09-20" required>
+          </label>
+          <label>Estilo do site
+            <select name="style">
+              <option value="romantic">Romântico</option>
+              <option value="classic">Clássico</option>
+              <option value="modern">Moderno</option>
+            </select>
+          </label>
+          <input name="theme" type="hidden" value="romantic">
+          <label>Mensagem principal
+            <textarea name="message" rows="3">Vamos celebrar esse dia com as pessoas que amamos.</textarea>
+          </label>
+          <label>Frase curta do convite
+            <input name="tagline" type="text" value="Com amor, esperamos você">
+          </label>
+          <label>Local do casamento
+            <input name="place" type="text" value="Espaço Jardim das Flores - São Paulo, SP">
+          </label>
+          <div class="form-row">
+            <label>Cor principal
+              <input name="color" type="color" value="#dd6a73">
+            </label>
+            <label>Formato da foto
+              <select name="photoShape">
+                <option value="soft">Cantos suaves</option>
+                <option value="round">Redonda</option>
+                <option value="square">Quadrada</option>
+              </select>
+            </label>
+          </div>
+          <label>Foto principal
+            <input name="heroPhoto" type="file" accept="image/*">
+          </label>
+          <label>Foto da história
+            <input name="storyPhoto" type="file" accept="image/*">
+          </label>
+          <div class="option-grid">
+            <label><input name="showGifts" type="checkbox" checked> Mostrar lista de presentes</label>
+            <label><input name="showRsvp" type="checkbox" checked> Mostrar RSVP</label>
+          </div>
+          <div class="form-actions">
+            <button class="button button-outline" type="button" id="update-preview">Atualizar prévia</button>
+            <button class="button button-primary" type="submit">Criar site</button>
+          </div>
+        </form>
+        <div class="builder-preview-wrap">
+          <div class="builder-preview-label">
+            <span>Previa ao vivo</span>
+            <strong>Site pronto em 1 clique</strong>
+          </div>
+        <div class="live-preview" id="site-preview">
+          <div class="preview-ribbon">Save the date</div>
+          <h3>Lívia & Rafael</h3>
+          <p>20/09/2026</p>
+          <strong>Com amor, esperamos você</strong>
+          <span>Vamos celebrar esse dia com as pessoas que amamos.</span>
+        </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="modal" id="couple-search" role="dialog" aria-modal="true" aria-labelledby="couple-search-title">
+      <button class="modal-close" type="button" data-close-modal aria-label="Fechar">×</button>
+      <div class="tool-form">
+        <span class="eyebrow">Busca</span>
+        <h2 id="couple-search-title">Buscar casal</h2>
+        <div class="inline-form">
+          <input id="search-input" type="search" placeholder="Digite Lívia, Rafael, Marina...">
+          <button class="button button-primary" id="search-button" type="button">Buscar</button>
+        </div>
+        <div class="results-list" id="search-results"></div>
+      </div>
+    </article>
+
+    <article class="modal" id="gift-tool" role="dialog" aria-modal="true" aria-labelledby="gift-tool-title">
+      <button class="modal-close" type="button" data-close-modal aria-label="Fechar">×</button>
+      <div class="modal-grid">
+        <div class="tool-form">
+          <span class="eyebrow">Lista</span>
+          <h2 id="gift-tool-title">Lista de presentes</h2>
+          <div class="gift-shop" id="gift-shop"></div>
+        </div>
+        <aside class="gift-summary">
+          <h3>Resumo</h3>
+          <div id="gift-cart"></div>
+          <div class="summary-total">
+            <span>Total recebido</span>
+            <strong id="gift-total">R$ 0,00</strong>
+          </div>
+          <button class="button button-primary" id="clear-gifts" type="button">Limpar lista</button>
+        </aside>
+      </div>
+    </article>
+
+    <article class="modal" id="rsvp-tool" role="dialog" aria-modal="true" aria-labelledby="rsvp-tool-title">
+      <button class="modal-close" type="button" data-close-modal aria-label="Fechar">×</button>
+      <div class="modal-grid">
+        <form class="tool-form" id="rsvp-form">
+          <span class="eyebrow">RSVP</span>
+          <h2 id="rsvp-tool-title">Confirmar presença</h2>
+          <label>Nome do convidado
+            <input name="guest" type="text" placeholder="Ex: Maria Souza" required>
+          </label>
+          <label>Número de acompanhantes
+            <input name="companions" type="number" min="0" max="10" value="0">
+          </label>
+          <label>Vai comparecer?
+            <select name="status">
+              <option value="Confirmado">Sim, estarei presente</option>
+              <option value="Talvez">Ainda não sei</option>
+              <option value="Ausente">Não poderei ir</option>
+            </select>
+          </label>
+          <button class="button button-primary" type="submit">Salvar confirmação</button>
+        </form>
+        <div class="guest-list">
+          <h3>Confirmações</h3>
+          <div id="guest-list"></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="modal" id="tools-panel" role="dialog" aria-modal="true" aria-labelledby="tools-panel-title">
+      <button class="modal-close" type="button" data-close-modal aria-label="Fechar">×</button>
+      <div class="tool-form">
+        <span class="eyebrow">Recursos</span>
+        <h2 id="tools-panel-title">Painel de ferramentas</h2>
+        <div class="tools-grid">
+          <button type="button" data-open-tool="site-builder">Editor de site</button>
+          <button type="button" data-open-tool="gift-tool">Lista de presentes</button>
+          <button type="button" data-open-tool="rsvp-tool">RSVP</button>
+          <button type="button" data-open-tool="couple-search">Buscar casal</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="modal checkout-modal" id="theme-checkout" role="dialog" aria-modal="true" aria-labelledby="theme-checkout-title">
+      <button class="modal-close" type="button" data-close-modal aria-label="Fechar">×</button>
+      <div class="checkout-grid">
+        <div class="checkout-preview">
+          <img id="checkout-image" src="img/01 (3).png" alt="">
+          <div class="checkout-preview-copy">
+            <span id="checkout-category">Tema premium</span>
+            <h2 id="theme-checkout-title">Floresta elegante</h2>
+            <p id="checkout-description">Site completo com RSVP, lista de presentes, galeria e contagem regressiva.</p>
+          </div>
+        </div>
+        <form class="tool-form checkout-form" id="theme-checkout-form">
+          <span class="eyebrow">Finalizar compra</span>
+          <div class="checkout-price-line">
+            <strong id="checkout-price">R$ 97</strong>
+            <span>Pagamento único</span>
+          </div>
+          <input type="hidden" name="theme" id="checkout-theme-key" value="forest">
+          <label>Nome do casal
+            <input name="couple" type="text" placeholder="Ex: Ana & Miguel" required>
+          </label>
+          <label>E-mail
+            <input name="email" type="email" placeholder="seuemail@email.com" required>
+          </label>
+          <label>WhatsApp
+            <input name="phone" type="tel" placeholder="(00) 00000-0000" required>
+          </label>
+          <ul class="checkout-includes">
+            <li>Site publicado com o tema escolhido</li>
+            <li>RSVP, presentes, galeria e recados inclusos</li>
+            <li>Personalização de nomes, data, cores e fotos</li>
+          </ul>
+          <div class="form-actions">
+            <button class="button button-outline" type="button" id="checkout-demo">Ver demonstração</button>
+            <button class="button button-primary" type="submit">Finalizar compra</button>
+          </div>
+        </form>
+      </div>
+    </article>
+
+    <article class="modal compact-modal" id="utility-modal" role="dialog" aria-modal="true" aria-labelledby="utility-title">
+      <button class="modal-close" type="button" data-close-modal aria-label="Fechar">×</button>
+      <div class="tool-form">
+        <span class="eyebrow" id="utility-eyebrow">Ação</span>
+        <h2 id="utility-title">Título</h2>
+        <p id="utility-text"></p>
+        <div class="utility-actions" id="utility-actions"></div>
+      </div>
+    </article>
+  </section>
+
+  <a class="floating-cta js-open-modal" href="#criar" data-modal="site-builder">Criar site grátis</a>
+  <section class="chat-panel" aria-live="polite" aria-label="Assistente de chat">
+    <button class="chat-close" type="button" aria-label="Fechar chat">x</button>
+    <div class="chat-message chat-message-bot">Oi! Posso te ajudar com o site do casamento?</div>
+    <div class="chat-options">
+      <button type="button" data-chat-answer="site">Quero criar meu site</button>
+      <button type="button" data-chat-answer="lista">Como funciona a lista?</button>
+      <button type="button" data-chat-answer="ajuda">Preciso de ajuda</button>
+    </div>
+    <div class="chat-response" id="chat-response"></div>
+  </section>
+
+  <button class="chat-assistant" type="button" aria-label="Abrir assistente de chat" aria-expanded="false">
+    <img src="video/chatcasamento.webp" alt="">
+  </button>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-analytics.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBulTomdHV1TL5MPa-5fLCKXUAHiSL0Zcc",
+      authDomain: "site-casamento-7e66a.firebaseapp.com",
+      projectId: "site-casamento-7e66a",
+      storageBucket: "site-casamento-7e66a.firebasestorage.app",
+      messagingSenderId: "378703321412",
+      appId: "1:378703321412:web:ab1daab40ffd7dd16f5f11",
+      measurementId: "G-DG9EECRLGR"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    console.log("Firebase carregado!", app, analytics);
+  </script>
+  <script src="firebase-data.js?v=firebase-1"></script>
+  <script src="script.js?v=themes-10"></script>
+</body>
+</html>
