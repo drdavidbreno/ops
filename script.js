@@ -615,9 +615,32 @@ function readImageInput(input) {
   if (!file) return Promise.resolve("");
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
-    reader.onload = () => resolve(reader.result);
+    reader.onload = async () => resolve(await compressImageDataUrl(String(reader.result || "")));
     reader.onerror = reject;
     reader.readAsDataURL(file);
+  });
+}
+
+function compressImageDataUrl(dataUrl, maxSide = 1000, quality = 0.72) {
+  if (!dataUrl || !String(dataUrl).startsWith("data:image/")) return Promise.resolve(dataUrl || "");
+
+  return new Promise((resolve) => {
+    const image = new Image();
+    image.onload = () => {
+      const scale = Math.min(1, maxSide / Math.max(image.width, image.height));
+      const canvas = document.createElement("canvas");
+      canvas.width = Math.max(1, Math.round(image.width * scale));
+      canvas.height = Math.max(1, Math.round(image.height * scale));
+      const context = canvas.getContext("2d");
+      if (!context) {
+        resolve(dataUrl);
+        return;
+      }
+      context.drawImage(image, 0, 0, canvas.width, canvas.height);
+      resolve(canvas.toDataURL("image/jpeg", quality));
+    };
+    image.onerror = () => resolve(dataUrl);
+    image.src = dataUrl;
   });
 }
 
@@ -634,7 +657,7 @@ function stripLargeDataUrls(value) {
     );
   }
 
-  if (typeof value === "string" && value.startsWith("data:image/")) {
+  if (typeof value === "string" && value.startsWith("data:image/") && value.length > 700000) {
     return "";
   }
 
@@ -647,6 +670,18 @@ async function uploadSiteImages(site) {
   nextSite.heroPhoto = await window.OpsFirebaseData.uploadSiteImage(site.slug, "heroPhoto", site.heroPhoto);
   nextSite.storyPhoto = await window.OpsFirebaseData.uploadSiteImage(site.slug, "storyPhoto", site.storyPhoto);
   return nextSite;
+}
+
+async function syncCreatedSite(site) {
+  try {
+    const uploadedSite = await uploadSiteImages(site);
+    const sites = readSites();
+    sites[uploadedSite.slug] = { ...(sites[uploadedSite.slug] || {}), ...uploadedSite };
+    writeSites(sites);
+    await window.OpsFirebaseData?.saveSite?.(uploadedSite);
+  } catch (error) {
+    console.warn("Nao foi possivel sincronizar o site agora.", error);
+  }
 }
 
 function readSites() {
@@ -669,17 +704,16 @@ function writeSites(sites) {
 }
 
 async function persistCreatedSite(site) {
-  const uploadedSite = await uploadSiteImages(site);
   const sites = readSites();
-  sites[uploadedSite.slug] = uploadedSite;
+  sites[site.slug] = site;
   if (!writeSites(sites)) {
-    sites[uploadedSite.slug] = stripLargeDataUrls(uploadedSite);
+    sites[site.slug] = stripLargeDataUrls(site);
     if (!writeSites(sites)) {
       throw new Error("Nao foi possivel salvar o site neste navegador.");
     }
   }
-  await window.OpsFirebaseData?.saveSite?.(uploadedSite);
-  return uploadedSite;
+  syncCreatedSite(site);
+  return site;
 }
 
 builderForm.querySelectorAll('input[type="file"]').forEach((input) => {

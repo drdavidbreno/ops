@@ -21,7 +21,7 @@ function stripLargeDataUrls(value) {
     );
   }
 
-  if (typeof value === "string" && value.startsWith("data:image/")) {
+  if (typeof value === "string" && value.startsWith("data:image/") && value.length > 700000) {
     return "";
   }
 
