@@ -413,4 +413,30 @@ rsvpForm.addEventListener("submit", (event) => {
   const data = new FormData(rsvpForm);
   const guest = {
     name: data.get("guest"),
-    c
+    companions: data.get("companions"),
+    note: data.get("note"),
+    createdAt: new Date().toISOString()
+  };
+  guests.unshift(guest);
+  localStorage.setItem(guestsKey, JSON.stringify(guests));
+  window.OpsFirebaseData?.addGuest?.(site.slug, guest);
+  rsvpForm.reset();
+  renderGuests();
+});
+
+renderGuests();
+renderNotes();
+
+window.OpsFirebaseData?.listGuests?.(site.slug).then((cloudGuests) => {
+  if (!cloudGuests?.length) return;
+  guests.splice(0, guests.length, ...cloudGuests);
+  localStorage.setItem(guestsKey, JSON.stringify(guests));
+  renderGuests();
+});
+
+window.OpsFirebaseData?.listNotes?.(site.slug).then((cloudNotes) => {
+  if (!cloudNotes?.length) return;
+  notes.splice(0, notes.length, ...cloudNotes);
+  localStorage.setItem(notesKey, JSON.stringify(notes));
+  renderNotes();
+});
