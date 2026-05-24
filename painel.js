@@ -41,12 +41,19 @@ function stripLargeDataUrls(value) {
 }
 
 function writeSites(sites) {
+  const payload = JSON.stringify(stripLargeDataUrls(sites));
   try {
-    localStorage.setItem("casamentoSites", JSON.stringify(stripLargeDataUrls(sites)));
+    localStorage.setItem("casamentoSites", payload);
     return true;
   } catch (error) {
-    console.warn("Nao foi possivel salvar no navegador.", error);
-    return false;
+    try {
+      localStorage.removeItem("casamentoSites");
+      localStorage.setItem("casamentoSites", payload);
+      return true;
+    } catch (retryError) {
+      console.warn("Nao foi possivel salvar no navegador.", retryError || error);
+      return false;
+    }
   }
 }
 
